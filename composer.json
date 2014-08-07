@@ -2,5 +2,5 @@
   "name": "adrotec/common-bundles",
   "autoload": {
       "psr-0": { "Adrotec\\Common": "src/" }
-  },
+  }
 }
