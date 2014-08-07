@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="Adrotec\Common\ContactBundle\Entity\Address" table="_contact_addresses">
+        <id name="id" type="integer" column="id">
+            <generator strategy="AUTO"/>
+        </id>
+        <field name="line1" type="string" column="line1"/>
+        <field name="line2" type="string" column="line2" nullable="true"/>
+        <field name="line3" type="string" column="line3" nullable="true"/>
+        <field name="city" type="string" column="city"/>
+        <field name="zipcode" type="integer" column="zipcode" nullable="true"/>
+        <field name="latitude" type="float" column="latitude" nullable="true"/>
+        <field name="longitude" type="float" column="longitude" nullable="true"/>
+    
+        <field name="districtId" type="integer" column="district_id" nullable="true"/>
+        <many-to-one field="district" target-entity="Adrotec\Common\ContactBundle\Entity\Lookup\District">
+            <join-column name="district_id" />
+        </many-to-one>
+    </entity>
+</doctrine-mapping>

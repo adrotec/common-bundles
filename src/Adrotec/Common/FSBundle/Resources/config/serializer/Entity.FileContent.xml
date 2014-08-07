@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+    <class name="Adrotec\Common\FSBundle\Entity\FileContent" exclusion-policy="ALL">
+        <xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
+        <property name="id" expose="true"></property>
+        <property name="contentBase64" expose="true" access-type="public_method"></property>
+    </class>
+</serializer>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+    <class name="Adrotec\Common\FSBundle\Entity\AbstractFile" exclusion-policy="ALL">
+        <xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
+        <property name="id" expose="true"></property>
+        <property name="name" expose="true"></property>
+        <property name="extension" expose="true"></property>
+        <property name="contentBase64" expose="true" access-type="public_method"></property>
+        <property name="createdAt" expose="true"></property>
+        <property name="mimeType" expose="true"></property>
+        <property name="modifiedAt" expose="true"></property>
+        <!--<property name="fileContent" expose="true"></property>-->
+    </class>
+</serializer>

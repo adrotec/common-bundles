@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Adrotec\Common\ContactBundle\Entity\Contact" table="_contact_contacts">
+    <id name="id" type="integer" column="id">
+      <generator strategy="AUTO"/>
+    </id>
+    
+    <!-- ASSOCIATIONS -->
+    
+            
+        <one-to-many field="contactAddresses" target-entity="Adrotec\Common\ContactBundle\Entity\ContactAddress" mapped-by="contact">
+        </one-to-many>
+            
+        <one-to-many field="contactMedia" target-entity="Adrotec\Common\ContactBundle\Entity\ContactMedium\ContactMedium" mapped-by="contact">
+        </one-to-many>
+            
+        <one-to-many field="phones" target-entity="Adrotec\Common\ContactBundle\Entity\ContactMedium\Phone" mapped-by="contact">
+        </one-to-many>
+        <one-to-many field="emails" target-entity="Adrotec\Common\ContactBundle\Entity\ContactMedium\Email" mapped-by="contact">
+        </one-to-many>
+        <one-to-many field="socialProfiles" target-entity="Adrotec\Common\ContactBundle\Entity\ContactMedium\SocialProfile" mapped-by="contact">
+        </one-to-many>
+        <one-to-many field="urls" target-entity="Adrotec\Common\ContactBundle\Entity\ContactMedium\Url" mapped-by="contact">
+        </one-to-many>
+        <one-to-many field="instantMessages" target-entity="Adrotec\Common\ContactBundle\Entity\ContactMedium\InstantMessage" mapped-by="contact">
+        </one-to-many>
+    
+  </entity>
+</doctrine-mapping>

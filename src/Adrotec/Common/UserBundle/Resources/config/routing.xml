@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<routes xmlns="http://symfony.com/schema/routing"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
+
+    <route id="adro_common_user_auth_login" pattern="/auth/login">
+        <default key="_controller">AdrotecCommonUserBundle:User:login</default>
+    </route>
+    <route id="adro_common_user_auth_account" pattern="/auth/account">
+        <default key="_controller">AdrotecCommonUserBundle:User:account</default>
+    </route>
+    <route id="adro_common_user_auth_validate" pattern="/auth/validate">
+        <default key="_controller">AdrotecCommonUserBundle:User:validate</default>
+    </route>
+<!--     <route id="adro_common_user_api" pattern="/user/api/{route}">
+        <default key="_controller">AdrotecCommonUserBundle:Api:api</default>
+        <requirement key="route">.+</requirement>
+    </route> -->
+</routes>
+ 

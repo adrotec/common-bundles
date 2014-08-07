@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+    <class name="Adrotec\Common\UserBundle\Entity\Base\User" exclusion-policy="ALL">
+        <xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
+        <property name="id" expose="true"></property>
+        <property name="username" expose="true"></property>
+        <property name="email" expose="true"></property>
+        <property name="enabled" expose="true"></property>
+        <property name="locked" expose="true"></property>
+        <property name="expired" expose="true"></property>
+        <property name="credentialsExpired" expose="true"></property>
+    </class>
+</serializer>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+    <class name="Adrotec\Common\ContactBundle\Entity\ContactMedium\ContactMedium"
+           exclusion-policy="ALL">
+        <xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
+        <property name="id" expose="true"></property>
+        <property name="value" expose="true"></property>
+        <property name="contact" expose="true"></property>
+        <!--<property name="contactId" expose="true"></property>-->
+    </class>
+</serializer>

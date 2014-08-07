@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<serializer>
+    <class name="Adrotec\Common\UserBundle\Entity\UserAccount" exclusion-policy="ALL">
+        <xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
+        <property name="id" expose="true"></property>
+        <property name="userGroups" expose="true"></property>
+        <property name="userRoles" expose="true"></property>
+        <property name="groups" expose="true"></property>
+        <property name="roles" expose="true"></property>
+        <property name="credentials" expose="true" access_type="public_method"></property>
+    </class>
+</serializer>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="Adrotec\Common\ContactBundle\Entity\Lookup\ContactLookup" table="_contact_lookups" inheritance-type="SINGLE_TABLE">
+        <discriminator-column name="type" type="string" />
+        <discriminator-map>
+            <discriminator-mapping value="address" class="Adrotec\Common\ContactBundle\Entity\ContactType\AddressType"/>
+            <discriminator-mapping value="phone" class="Adrotec\Common\ContactBundle\Entity\ContactType\PhoneType"/>
+            <discriminator-mapping value="email" class="Adrotec\Common\ContactBundle\Entity\ContactType\EmailType"/>
+            <discriminator-mapping value="social_profile" class="Adrotec\Common\ContactBundle\Entity\ContactType\SocialProfileType"/>
+            <discriminator-mapping value="url" class="Adrotec\Common\ContactBundle\Entity\ContactType\UrlType"/>
+            <discriminator-mapping value="instant_message" class="Adrotec\Common\ContactBundle\Entity\ContactType\InstantMessageType"/>
+            <discriminator-mapping value="district" class="District"/>
+        </discriminator-map>
+        <id name="id" type="integer" column="id">
+          <generator strategy="AUTO"/>
+        </id>
+        <field name="code" type="string" column="code" nullable="true"/>
+        <field name="name" type="string" column="name" nullable="true" />
+    </entity>
+</doctrine-mapping>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <mapped-superclass name="Adrotec\Common\CoreBundle\Entity\Currency">
+        <id name="id" type="integer" column="id">
+            <generator strategy="AUTO"/>
+        </id>
+        <field name="code" type="string" column="code"/>
+        <field name="name" type="string" column="name"/>
+        <field name="symbol" type="string" column="symbol" nullable="true" />
+        <field name="symbolEncoded" type="boolean" column="symbol_encoded" nullable="true" />
+
+        <!-- ASSOCIATIONS -->
+
+        <field name="countryId" type="integer" column="country_id" nullable="true"/>
+        <many-to-one field="country" target-entity="Adrotec\Common\CoreBundle\Entity\Country">
+            <join-column name="country_id" />
+        </many-to-one>
+    </mapped-superclass>
+</doctrine-mapping>

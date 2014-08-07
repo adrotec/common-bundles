@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="Adrotec\Common\UserBundle\Entity\UserGroup" table="usr_user_groups">
+        <id name="id" type="integer" column="id">
+            <generator strategy="AUTO"/>
+        </id>
+
+        <!-- ASSOCIATIONS -->
+
+        <field name="groupId" type="integer" column="group_id"/>
+        <many-to-one field="group" target-entity="Group">
+            <join-column name="group_id" />
+        </many-to-one>
+        
+        <field name="userAccountId" type="integer" column="user_id"/>
+        <many-to-one field="userAccount" target-entity="UserAccount">
+            <join-column name="user_id" />
+        </many-to-one>
+    </entity>
+</doctrine-mapping>

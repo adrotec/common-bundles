@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="Adrotec\Common\ContactBundle\Entity\ContactAddress" table="_contact_contact_addresses_mm">
+        <id name="id" type="integer" column="id">
+            <generator strategy="AUTO"/>
+        </id>
+    
+        <!-- ASSOCIATIONS -->
+    
+        <field name="contactId" type="integer" column="contact_id" nullable="true"/>
+        <many-to-one field="contact" target-entity="Adrotec\Common\ContactBundle\Entity\Contact">
+            <join-column name="contact_id" />
+        </many-to-one>
+    
+        <field name="addressId" type="integer" column="address_id" nullable="true"/>
+        <many-to-one field="address" target-entity="Adrotec\Common\ContactBundle\Entity\Address">
+            <join-column name="address_id" />
+        </many-to-one>
+    
+        <field name="addressTypeId" type="integer" column="address_type_id" nullable="true"/>
+        <many-to-one field="addressType" target-entity="Adrotec\Common\ContactBundle\Entity\ContactType\AddressType">
+            <join-column name="address_type_id" />
+        </many-to-one>
+            
+    </entity>
+</doctrine-mapping>
