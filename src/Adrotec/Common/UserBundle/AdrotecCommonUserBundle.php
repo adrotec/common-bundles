@@ -12,7 +12,7 @@ class AdrotecCommonUserBundle extends AdrotecCommonCoreBundle {
             'GroupRole',
             'UserGroup',
             'Role',
-            'UserAccount',
+            'User',
             'UserRole',
             'Profile',
         );

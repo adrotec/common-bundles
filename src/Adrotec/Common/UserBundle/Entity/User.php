@@ -4,13 +4,10 @@
 
 namespace Adrotec\Common\UserBundle\Entity;
 
-//use FOS\UserBundle\Model\User as BaseUser;
-use Adrotec\Common\UserBundle\Entity\Base\User as BaseUser;
-
 /**
  * User
  */
-class UserAccount extends BaseUser {
+class User extends Base\User {
 
     /**
      * @var integer
@@ -22,6 +19,30 @@ class UserAccount extends BaseUser {
      */
     private $userRoles;
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $userGroups;
+
+    /**
+     * @var \Adrotec\Common\UserBundle\Entity\Profile
+     */
+    private $profile;
+
+    /**
+     * @var \Adrotec\Common\ContactBundle\Entity\Contact
+     */
+    private $contact;
+    
+    /**
+     * Constructor
+     */
+    public function __construct() {
+        parent::__construct();
+        $this->userGroups = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->userRoles = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
     /**
      * Get id
      *
@@ -59,20 +80,6 @@ class UserAccount extends BaseUser {
      */
     public function getUserRoles() {
         return $this->userRoles;
-    }
-
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $userGroups;
-
-    /**
-     * Constructor
-     */
-    public function __construct() {
-        parent::__construct();
-        $this->userGroups = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->userRoles = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -173,4 +180,49 @@ class UserAccount extends BaseUser {
         $this->userGroups->removeElement($userGroups);
     }
 
+    /**
+     * Set profile
+     *
+     * @param \Adrotec\Common\UserBundle\Entity\Profile $profile
+     * @return User
+     */
+    public function setProfile(\Adrotec\Common\UserBundle\Entity\Profile $profile = null)
+    {
+        $this->profile = $profile;
+
+        return $this;
+    }
+
+    /**
+     * Get profile
+     *
+     * @return \Adrotec\Common\UserBundle\Entity\Profile 
+     */
+    public function getProfile()
+    {
+        return $this->profile;
+    }
+
+    /**
+     * Set contact
+     *
+     * @param \Adrotec\Common\ContactBundle\Entity\Contact $contact
+     * @return User
+     */
+    public function setContact(\Adrotec\Common\ContactBundle\Entity\Contact $contact = null)
+    {
+        $this->contact = $contact;
+
+        return $this;
+    }
+
+    /**
+     * Get contact
+     *
+     * @return \Adrotec\Common\ContactBundle\Entity\Contact 
+     */
+    public function getContact()
+    {
+        return $this->contact;
+    }
 }

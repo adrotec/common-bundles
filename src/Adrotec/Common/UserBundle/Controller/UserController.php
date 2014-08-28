@@ -5,7 +5,7 @@ namespace Adrotec\Common\UserBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Adrotec\Common\UserBundle\Entity\UserAccount;
+use Adrotec\Common\UserBundle\Entity\User;
 
 use FOS\UserBundle\Model\UserInterface;
 
@@ -26,7 +26,7 @@ class UserController extends Controller {
 //        $username = $request->query->get('username'); // for testing only
         if ($username) {
             $em = $this->getDoctrine()->getManager();
-            $repository = $em->getRepository('AdrotecCommonUserBundle:UserAccount');
+            $repository = $em->getRepository('AdrotecCommonUserBundle:User');
             if ($user = $repository->findByUsernameColumn($username)) {
                 unset($response['error']);
                 $response['salt'] = $user->getSalt();

@@ -2,12 +2,10 @@
 
 namespace Adrotec\Common\UserBundle\Entity;
 
-use Adrotec\Common\UserBundle\Entity\Base\Group as BaseGroup;
-
 /**
  * User
  */
-class Group extends BaseGroup {
+class Group extends Base\Group {
 
     /**
      * @var integer
