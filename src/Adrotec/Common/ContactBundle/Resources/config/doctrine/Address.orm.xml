@@ -6,7 +6,7 @@
         </id>
         <field name="line1" type="string" column="line1"/>
         <field name="line2" type="string" column="line2" nullable="true"/>
-        <field name="line3" type="string" column="line3" nullable="true"/>
+        <!--<field name="line3" type="string" column="line3" nullable="true"/>-->
         <field name="city" type="string" column="city"/>
         <field name="zipcode" type="integer" column="zipcode" nullable="true"/>
         <field name="latitude" type="float" column="latitude" nullable="true"/>
