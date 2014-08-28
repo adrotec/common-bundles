@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="Adrotec\Common\PaymentBundle\Entity\Voucher" table="_pmt_vouchers">
+        <id name="id" type="integer" column="id">
+            <generator strategy="AUTO"/>
+        </id>
+        <field name="voucherNumber" type="string" column="voucher_number" />
+        <field name="date" type="datetime" column="date"/>
+        <field name="amount" type="float" column="amount"/>
+        <field name="validFrom" type="date" column="valid_from"/>
+        <field name="validUntil" type="date" column="valid_until"/>
+        <!--<field name="studentId" type="string" column="student_id" nullable="true"/>-->
+        <field name="securityCode" type="string" column="security_code" nullable="true"/>
+        <field name="description" type="string" column="description" nullable="true"/>
+        <field name="isUsed" type="boolean" column="is_used" nullable="true"/>
+        <field name="isCancelled" type="boolean" column="is_cancelled" nullable="true"/>
+        
+        <many-to-one field="currency" target-entity="Adro\Common\CoreBundle\Entity\Currency">
+            <join-columns>
+                <join-column name="currency_id" referenced-column-name="id"/>
+            </join-columns>
+        </many-to-one>
+        
+        <many-to-one field="user" target-entity="Adrotec\Common\UserBundle\Entity\User">
+            <join-columns>
+                <join-column name="user_id" referenced-column-name="id"/>
+            </join-columns>
+        </many-to-one>
+    </entity>
+</doctrine-mapping>

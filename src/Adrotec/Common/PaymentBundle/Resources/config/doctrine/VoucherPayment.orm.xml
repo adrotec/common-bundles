@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="Adrotec\Common\PaymentBundle\Entity\VoucherPayment">
+    
+        <field name="number" type="string" column="number"/>
+        <field name="code" type="string" column="code"/>
+
+        <many-to-one field="voucher" target-entity="Adrotec\Common\PaymentBundle\Entity\Voucher">
+            <join-column name="voucher_id" referenced-column-name="id" />
+        </many-to-one>
+  
+    </entity>
+</doctrine-mapping>
