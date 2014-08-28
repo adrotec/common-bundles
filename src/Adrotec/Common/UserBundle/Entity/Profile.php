@@ -42,11 +42,6 @@ class Profile
     /**
      * @var integer
      */
-    private $photoId;
-
-    /**
-     * @var integer
-     */
     private $id;
 
     /**
@@ -191,29 +186,6 @@ class Profile
     public function getBio()
     {
         return $this->bio;
-    }
-
-    /**
-     * Set photoId
-     *
-     * @param integer $photoId
-     * @return Profile
-     */
-    public function setPhotoId($photoId)
-    {
-        $this->photoId = $photoId;
-
-        return $this;
-    }
-
-    /**
-     * Get photoId
-     *
-     * @return integer 
-     */
-    public function getPhotoId()
-    {
-        return $this->photoId;
     }
 
     /**

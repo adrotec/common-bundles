@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
-    <entity name="Adrotec\Common\UserBundle\Entity\UserRole" table="usr_user_roles">
+    <entity name="Adrotec\Common\UserBundle\Entity\UserRole" table="_usr_user_roles">
         <id name="id" type="integer" column="id">
             <generator strategy="AUTO"/>
         </id>
 
         <!-- ASSOCIATIONS -->
 
-        <field name="userAccountId" type="integer" column="user_id"/>
         <many-to-one field="userAccount" target-entity="UserAccount">
             <join-column name="user_id" />
         </many-to-one>
         
-        <field name="roleId" type="integer" column="role_id"/>
         <many-to-one field="role" target-entity="Role">
             <join-column name="role_id" />
         </many-to-one>

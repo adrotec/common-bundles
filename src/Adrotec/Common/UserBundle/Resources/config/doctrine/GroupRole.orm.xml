@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
-    <entity name="Adrotec\Common\UserBundle\Entity\GroupRole" table="usr_group_roles">
+    <entity name="Adrotec\Common\UserBundle\Entity\GroupRole" table="_usr_group_roles">
         <id name="id" type="integer" column="id">
             <generator strategy="AUTO"/>
         </id>
 
         <!-- ASSOCIATIONS -->
 
-        <field name="groupId" type="integer" column="group_id"/>
         <many-to-one field="group" target-entity="Group">
             <join-column name="group_id" />
         </many-to-one>
         
-        <field name="roleId" type="integer" column="role_id"/>
         <many-to-one field="role" target-entity="Role">
             <join-column name="role_id" />
         </many-to-one>

@@ -7,17 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * UserRole
  */
-class UserRole
-{
-    /**
-     * @var integer
-     */
-    private $userId;
-
-    /**
-     * @var integer
-     */
-    private $roleId;
+class UserRole {
 
     /**
      * @var integer
@@ -33,53 +23,6 @@ class UserRole
      * @var \Adrotec\Common\UserBundle\Entity\Role
      */
     private $role;
-
-
-    /**
-     * Set userId
-     *
-     * @param integer $userId
-     * @return UserRole
-     */
-    public function setUserId($userId)
-    {
-        $this->userId = $userId;
-    
-        return $this;
-    }
-
-    /**
-     * Get userId
-     *
-     * @return integer 
-     */
-    public function getUserId()
-    {
-        return $this->userId;
-    }
-
-    /**
-     * Set roleId
-     *
-     * @param integer $roleId
-     * @return UserRole
-     */
-    public function setRoleId($roleId)
-    {
-        $this->roleId = $roleId;
-    
-        return $this;
-    }
-
-    /**
-     * Get roleId
-     *
-     * @return integer 
-     */
-    public function getRoleId()
-    {
-        return $this->roleId;
-    }
 
     /**
      * Get id
@@ -136,39 +79,11 @@ class UserRole
     {
         return $this->role;
     }
-    /**
-     * @var integer
-     */
-    private $userAccountId;
-
+ 
     /**
      * @var \Adrotec\Common\UserBundle\Entity\UserAccount
      */
     private $userAccount;
-
-
-    /**
-     * Set userAccountId
-     *
-     * @param integer $userAccountId
-     * @return UserRole
-     */
-    public function setUserAccountId($userAccountId)
-    {
-        $this->userAccountId = $userAccountId;
-
-        return $this;
-    }
-
-    /**
-     * Get userAccountId
-     *
-     * @return integer 
-     */
-    public function getUserAccountId()
-    {
-        return $this->userAccountId;
-    }
 
     /**
      * Set userAccount

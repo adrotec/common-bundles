@@ -3,9 +3,7 @@
     <class name="Adrotec\Common\UserBundle\Entity\UserRole" exclusion-policy="ALL">
         <xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
         <property name="id" expose="true"></property>
-        <property name="roleId" expose="true"></property>
         <property name="role" expose="true"></property>
-        <property name="userAccountId" expose="true"></property>
         <property name="userAccount" expose="true"></property>
     </class>
 </serializer>

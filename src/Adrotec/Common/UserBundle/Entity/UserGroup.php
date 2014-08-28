@@ -7,17 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * GroupUser
  */
-class UserGroup
-{
-    /**
-     * @var integer
-     */
-    private $groupId;
-
-    /**
-     * @var integer
-     */
-    private $userId;
+class UserGroup {
 
     /**
      * @var integer
@@ -33,53 +23,6 @@ class UserGroup
      * @var \Adrotec\Common\UserBundle\Entity\User
      */
     private $user;
-
-
-    /**
-     * Set groupId
-     *
-     * @param integer $groupId
-     * @return GroupUser
-     */
-    public function setGroupId($groupId)
-    {
-        $this->groupId = $groupId;
-    
-        return $this;
-    }
-
-    /**
-     * Get groupId
-     *
-     * @return integer 
-     */
-    public function getGroupId()
-    {
-        return $this->groupId;
-    }
-
-    /**
-     * Set userId
-     *
-     * @param integer $userId
-     * @return GroupUser
-     */
-    public function setUserId($userId)
-    {
-        $this->userId = $userId;
-    
-        return $this;
-    }
-
-    /**
-     * Get userId
-     *
-     * @return integer 
-     */
-    public function getUserId()
-    {
-        return $this->userId;
-    }
 
     /**
      * Get id
@@ -136,39 +79,11 @@ class UserGroup
     {
         return $this->user;
     }
-    /**
-     * @var integer
-     */
-    private $userAccountId;
-
+ 
     /**
      * @var \Adrotec\Common\UserBundle\Entity\UserAccount
      */
     private $userAccount;
-
-
-    /**
-     * Set userAccountId
-     *
-     * @param integer $userAccountId
-     * @return UserGroup
-     */
-    public function setUserAccountId($userAccountId)
-    {
-        $this->userAccountId = $userAccountId;
-
-        return $this;
-    }
-
-    /**
-     * Get userAccountId
-     *
-     * @return integer 
-     */
-    public function getUserAccountId()
-    {
-        return $this->userAccountId;
-    }
 
     /**
      * Set userAccount
