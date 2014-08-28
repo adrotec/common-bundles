@@ -16,16 +16,6 @@ class ContactMedium {
     /**
      * @var integer
      */
-//    protected $contactId;
-
-    /**
-     * @var integer
-     */
-    protected $contactTypeId;
-
-    /**
-     * @var integer
-     */
     protected $id;
 
     /**
@@ -55,52 +45,6 @@ class ContactMedium {
     public function getValue()
     {
         return $this->value;
-    }
-
-    /**
-     * Set contactId
-     *
-     * @param integer $contactId
-     * @return ContactMedium
-     */
-    public function setContactId($contactId)
-    {
-        $this->contactId = $contactId;
-
-        return $this;
-    }
-
-    /**
-     * Get contactId
-     *
-     * @return integer 
-     */
-    public function getContactId()
-    {
-        return $this->contactId;
-    }
-
-    /**
-     * Set contactTypeId
-     *
-     * @param integer $contactTypeId
-     * @return ContactMedium
-     */
-    public function setContactTypeId($contactTypeId)
-    {
-        $this->contactTypeId = $contactTypeId;
-
-        return $this;
-    }
-
-    /**
-     * Get contactTypeId
-     *
-     * @return integer 
-     */
-    public function getContactTypeId()
-    {
-        return $this->contactTypeId;
     }
 
     /**

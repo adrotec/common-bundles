@@ -42,11 +42,6 @@ class Address {
     /**
      * @var integer
      */
-    private $districtId;
-
-    /**
-     * @var integer
-     */
     private $id;
 
     /**
@@ -191,29 +186,6 @@ class Address {
     public function getLongitude()
     {
         return $this->longitude;
-    }
-
-    /**
-     * Set districtId
-     *
-     * @param integer $districtId
-     * @return Address
-     */
-    public function setDistrictId($districtId)
-    {
-        $this->districtId = $districtId;
-
-        return $this;
-    }
-
-    /**
-     * Get districtId
-     *
-     * @return integer 
-     */
-    public function getDistrictId()
-    {
-        return $this->districtId;
     }
 
     /**

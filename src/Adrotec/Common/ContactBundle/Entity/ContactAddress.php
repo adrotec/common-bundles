@@ -8,15 +8,6 @@ use Doctrine\ORM\Mapping as ORM;
  * ContactAddress
  */
 class ContactAddress {
-    /**
-     * @var integer
-     */
-    private $contactId;
-
-    /**
-     * @var integer
-     */
-    private $addressId;
 
     /**
      * @var integer
@@ -33,52 +24,10 @@ class ContactAddress {
      */
     private $address;
 
-
     /**
-     * Set contactId
-     *
-     * @param integer $contactId
-     * @return ContactAddress
+     * @var \Adrotec\Common\ContactBundle\Entity\ContactType\AddressType
      */
-    public function setContactId($contactId)
-    {
-        $this->contactId = $contactId;
-
-        return $this;
-    }
-
-    /**
-     * Get contactId
-     *
-     * @return integer 
-     */
-    public function getContactId()
-    {
-        return $this->contactId;
-    }
-
-    /**
-     * Set addressId
-     *
-     * @param integer $addressId
-     * @return ContactAddress
-     */
-    public function setAddressId($addressId)
-    {
-        $this->addressId = $addressId;
-
-        return $this;
-    }
-
-    /**
-     * Get addressId
-     *
-     * @return integer 
-     */
-    public function getAddressId()
-    {
-        return $this->addressId;
-    }
+    private $addressType;
 
     /**
      * Get id
@@ -134,39 +83,6 @@ class ContactAddress {
     public function getAddress()
     {
         return $this->address;
-    }
-    /**
-     * @var integer
-     */
-    private $addressTypeId;
-
-    /**
-     * @var \Adrotec\Common\ContactBundle\Entity\ContactType\AddressType
-     */
-    private $addressType;
-
-
-    /**
-     * Set addressTypeId
-     *
-     * @param integer $addressTypeId
-     * @return ContactAddress
-     */
-    public function setAddressTypeId($addressTypeId)
-    {
-        $this->addressTypeId = $addressTypeId;
-
-        return $this;
-    }
-
-    /**
-     * Get addressTypeId
-     *
-     * @return integer 
-     */
-    public function getAddressTypeId()
-    {
-        return $this->addressTypeId;
     }
 
     /**
