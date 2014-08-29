@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * AbstractBankPayment
  */
-abstract class AbstractBankPayment {
+abstract class AbstractBankPayment extends Payment {
     /**
      * @var \Adrotec\Common\PaymentBundle\Entity\Bank
      */

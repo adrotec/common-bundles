@@ -15,7 +15,7 @@
         <field name="isUsed" type="boolean" column="is_used" nullable="true"/>
         <field name="isCancelled" type="boolean" column="is_cancelled" nullable="true"/>
         
-        <many-to-one field="currency" target-entity="Adro\Common\CoreBundle\Entity\Currency">
+        <many-to-one field="currency" target-entity="Adrotec\Common\CoreBundle\Entity\Currency">
             <join-columns>
                 <join-column name="currency_id" referenced-column-name="id"/>
             </join-columns>

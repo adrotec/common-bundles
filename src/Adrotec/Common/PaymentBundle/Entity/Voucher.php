@@ -60,7 +60,7 @@ class Voucher
     private $id;
 
     /**
-     * @var \Adro\Common\CoreBundle\Entity\Currency
+     * @var \Adrotec\Common\CoreBundle\Entity\Currency
      */
     private $currency;
 
@@ -290,10 +290,10 @@ class Voucher
     /**
      * Set currency
      *
-     * @param \Adro\Common\CoreBundle\Entity\Currency $currency
+     * @param \Adrotec\Common\CoreBundle\Entity\Currency $currency
      * @return Voucher
      */
-    public function setCurrency(\Adro\Common\CoreBundle\Entity\Currency $currency = null)
+    public function setCurrency(\Adrotec\Common\CoreBundle\Entity\Currency $currency = null)
     {
         $this->currency = $currency;
 
@@ -303,7 +303,7 @@ class Voucher
     /**
      * Get currency
      *
-     * @return \Adro\Common\CoreBundle\Entity\Currency 
+     * @return \Adrotec\Common\CoreBundle\Entity\Currency 
      */
     public function getCurrency()
     {
