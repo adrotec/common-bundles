@@ -1,8 +1,6 @@
 <?php
 
-// src/Acme/UserBundle/Entity/UserRepository.php
-
-namespace Adrotec\Common\UserBundle\Entity;
+namespace Adrotec\Common\UserBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\NoResultException;

@@ -45,7 +45,7 @@ class Profile
     private $id;
 
     /**
-     * @var \Adrotec\Common\FSBundle\Entity\File
+     * @var \Adrotec\Common\FileSystemBundle\Entity\File
      */
     private $photo;
 
@@ -201,10 +201,10 @@ class Profile
     /**
      * Set photo
      *
-     * @param \Adrotec\Common\FSBundle\Entity\File $photo
+     * @param \Adrotec\Common\FileSystemBundle\Entity\File $photo
      * @return Profile
      */
-    public function setPhoto(\Adrotec\Common\FSBundle\Entity\File $photo = null)
+    public function setPhoto(\Adrotec\Common\FileSystemBundle\Entity\File $photo = null)
     {
         $this->photo = $photo;
 
@@ -214,7 +214,7 @@ class Profile
     /**
      * Get photo
      *
-     * @return \Adrotec\Common\FSBundle\Entity\File 
+     * @return \Adrotec\Common\FileSystemBundle\Entity\File 
      */
     public function getPhoto()
     {

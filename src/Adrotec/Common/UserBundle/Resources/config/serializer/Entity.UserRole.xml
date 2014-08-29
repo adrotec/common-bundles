@@ -4,6 +4,6 @@
         <xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
         <property name="id" expose="true"></property>
         <property name="role" expose="true"></property>
-        <property name="userAccount" expose="true"></property>
+        <property name="user" expose="true"></property>
     </class>
 </serializer>

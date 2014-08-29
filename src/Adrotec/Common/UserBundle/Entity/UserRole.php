@@ -37,10 +37,10 @@ class UserRole {
     /**
      * Set user
      *
-     * @param \Adrotec\Common\UserBundle\Entity\UserAccount $user
+     * @param \Adrotec\Common\UserBundle\Entity\User $user
      * @return UserRole
      */
-    public function setUser(\Adrotec\Common\UserBundle\Entity\UserAccount $user = null)
+    public function setUser(\Adrotec\Common\UserBundle\Entity\User $user = null)
     {
         $this->user = $user;
     
@@ -50,7 +50,7 @@ class UserRole {
     /**
      * Get user
      *
-     * @return \Adrotec\Common\UserBundle\Entity\UserAccount 
+     * @return \Adrotec\Common\UserBundle\Entity\User 
      */
     public function getUser()
     {
@@ -79,32 +79,5 @@ class UserRole {
     {
         return $this->role;
     }
- 
-    /**
-     * @var \Adrotec\Common\UserBundle\Entity\UserAccount
-     */
-    private $userAccount;
-
-    /**
-     * Set userAccount
-     *
-     * @param \Adrotec\Common\UserBundle\Entity\UserAccount $userAccount
-     * @return UserRole
-     */
-    public function setUserAccount(\Adrotec\Common\UserBundle\Entity\UserAccount $userAccount = null)
-    {
-        $this->userAccount = $userAccount;
-
-        return $this;
-    }
-
-    /**
-     * Get userAccount
-     *
-     * @return \Adrotec\Common\UserBundle\Entity\UserAccount 
-     */
-    public function getUserAccount()
-    {
-        return $this->userAccount;
-    }
+    
 }

@@ -163,7 +163,7 @@ class User extends Base\User {
      * Add userGroups
      *
      * @param \Adrotec\Common\UserBundle\Entity\UserGroup $userGroups
-     * @return UserAccount
+     * @return User
      */
     public function addUserGroup(\Adrotec\Common\UserBundle\Entity\UserGroup $userGroups) {
         $this->userGroups[] = $userGroups;

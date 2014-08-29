@@ -17,7 +17,7 @@
         <field name="bio" type="text" column="bio" nullable="true"/>
 
         
-        <many-to-one field="photo" target-entity="Adrotec\Common\FSBundle\Entity\File">
+        <many-to-one field="photo" target-entity="Adrotec\Common\FileSystemBundle\Entity\File">
             <join-column name="photo_id"></join-column>
         </many-to-one>       
         

@@ -60,10 +60,10 @@ class UserGroup {
     /**
      * Set user
      *
-     * @param \Adrotec\Common\UserBundle\Entity\UserAccount $user
+     * @param \Adrotec\Common\UserBundle\Entity\User $user
      * @return GroupUser
      */
-    public function setUser(\Adrotec\Common\UserBundle\Entity\UserAccount $user = null)
+    public function setUser(\Adrotec\Common\UserBundle\Entity\User $user = null)
     {
         $this->user = $user;
     
@@ -73,38 +73,10 @@ class UserGroup {
     /**
      * Get user
      *
-     * @return \Adrotec\Common\UserBundle\Entity\UserAccount 
+     * @return \Adrotec\Common\UserBundle\Entity\User 
      */
     public function getUser()
     {
         return $this->user;
-    }
- 
-    /**
-     * @var \Adrotec\Common\UserBundle\Entity\UserAccount
-     */
-    private $userAccount;
-
-    /**
-     * Set userAccount
-     *
-     * @param \Adrotec\Common\UserBundle\Entity\UserAccount $userAccount
-     * @return UserGroup
-     */
-    public function setUserAccount(\Adrotec\Common\UserBundle\Entity\UserAccount $userAccount = null)
-    {
-        $this->userAccount = $userAccount;
-
-        return $this;
-    }
-
-    /**
-     * Get userAccount
-     *
-     * @return \Adrotec\Common\UserBundle\Entity\UserAccount 
-     */
-    public function getUserAccount()
-    {
-        return $this->userAccount;
     }
 }
