@@ -4,8 +4,8 @@
         <id name="id" type="integer" column="id">
             <generator strategy="AUTO"/>
         </id>
-
         
+
     <!-- ASSOCIATIONS -->
     
         <one-to-many field="userGroups" target-entity="UserGroup" mapped-by="group">

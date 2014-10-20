@@ -4,16 +4,6 @@
     <id name="id" type="integer" column="id">
       <generator strategy="AUTO"/>
     </id>
-    <many-to-one field="profile" target-entity="Adrotec\Common\UserBundle\Entity\Profile">
-      <join-columns>
-        <join-column name="profile_id" referenced-column-name="id"/>
-      </join-columns>
-    </many-to-one>
-    <many-to-one field="contact" target-entity="Adrotec\Common\ContactBundle\Entity\Contact">
-      <join-columns>
-        <join-column name="contact_id" referenced-column-name="id"/>
-      </join-columns>
-    </many-to-one>
 
     <one-to-many field="userGroups" target-entity="UserGroup" mapped-by="user">
 

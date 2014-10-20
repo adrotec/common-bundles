@@ -25,15 +25,25 @@ class User extends Base\User {
     private $userGroups;
 
     /**
-     * @var \Adrotec\Common\UserBundle\Entity\Profile
-     */
-    private $profile;
-
-    /**
      * @var \Adrotec\Common\ContactBundle\Entity\Contact
      */
     private $contact;
-    
+
+    /**
+     * @var string
+     */
+    private $firstName;
+
+    /**
+     * @var string
+     */
+    private $lastName;
+
+    /**
+     * @var \Adrotec\Common\FSBundle\Entity\File
+     */
+    private $picture;
+
     /**
      * Constructor
      */
@@ -181,29 +191,6 @@ class User extends Base\User {
     }
 
     /**
-     * Set profile
-     *
-     * @param \Adrotec\Common\UserBundle\Entity\Profile $profile
-     * @return User
-     */
-    public function setProfile(\Adrotec\Common\UserBundle\Entity\Profile $profile = null)
-    {
-        $this->profile = $profile;
-
-        return $this;
-    }
-
-    /**
-     * Get profile
-     *
-     * @return \Adrotec\Common\UserBundle\Entity\Profile 
-     */
-    public function getProfile()
-    {
-        return $this->profile;
-    }
-
-    /**
      * Set contact
      *
      * @param \Adrotec\Common\ContactBundle\Entity\Contact $contact
@@ -224,5 +211,130 @@ class User extends Base\User {
     public function getContact()
     {
         return $this->contact;
+    }
+
+    /**
+     * Set firstName
+     *
+     * @param string $firstName
+     * @return User
+     */
+    public function setFirstName($firstName)
+    {
+        $this->firstName = $firstName;
+
+        return $this;
+    }
+
+    /**
+     * Get firstName
+     *
+     * @return string 
+     */
+    public function getFirstName()
+    {
+        return $this->firstName;
+    }
+
+    /**
+     * Set lastName
+     *
+     * @param string $lastName
+     * @return User
+     */
+    public function setLastName($lastName)
+    {
+        $this->lastName = $lastName;
+
+        return $this;
+    }
+
+    /**
+     * Get lastName
+     *
+     * @return string 
+     */
+    public function getLastName()
+    {
+        return $this->lastName;
+    }
+
+    /**
+     * Set picture
+     *
+     * @param \Adrotec\Common\FSBundle\Entity\File $picture
+     * @return User
+     */
+    public function setPicture(\Adrotec\Common\FSBundle\Entity\File $picture = null)
+    {
+        $this->picture = $picture;
+
+        return $this;
+    }
+
+    /**
+     * Get picture
+     *
+     * @return \Adrotec\Common\FSBundle\Entity\File 
+     */
+    public function getPicture()
+    {
+        return $this->picture;
+    }
+    /**
+     * @var string
+     */
+    private $name;
+
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return User
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+    /**
+     * @var boolean
+     */
+    private $isOrg;
+
+
+    /**
+     * Set isOrg
+     *
+     * @param boolean $isOrg
+     * @return User
+     */
+    public function setIsOrg($isOrg)
+    {
+        $this->isOrg = $isOrg;
+
+        return $this;
+    }
+
+    /**
+     * Get isOrg
+     *
+     * @return boolean 
+     */
+    public function getIsOrg()
+    {
+        return $this->isOrg;
     }
 }

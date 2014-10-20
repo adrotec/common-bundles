@@ -14,7 +14,6 @@ class AdrotecCommonUserBundle extends AdrotecCommonCoreBundle {
             'Role',
             'User',
             'UserRole',
-            'Profile',
         );
     }
 

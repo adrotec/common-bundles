@@ -5,9 +5,9 @@
         <property name="id" expose="true"></property>
         <property name="username" expose="true"></property>
         <property name="email" expose="true"></property>
-        <property name="enabled" expose="true"></property>
+<!--        <property name="enabled" expose="true"></property>
         <property name="locked" expose="true"></property>
         <property name="expired" expose="true"></property>
-        <property name="credentialsExpired" expose="true"></property>
+        <property name="credentialsExpired" expose="true"></property>-->
     </class>
 </serializer>

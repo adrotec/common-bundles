@@ -7,11 +7,11 @@
 
         <!-- ASSOCIATIONS -->
 
-        <many-to-one field="group" target-entity="Group">
+        <many-to-one field="group" target-entity="Group" inversed-by="userGroups">
             <join-column name="group_id" />
         </many-to-one>
         
-        <many-to-one field="user" target-entity="User">
+        <many-to-one field="user" target-entity="User" inversed-by="userGroups">
             <join-column name="user_id" />
         </many-to-one>
     </entity>

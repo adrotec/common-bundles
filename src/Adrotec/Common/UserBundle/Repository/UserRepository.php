@@ -8,6 +8,7 @@ use Doctrine\ORM\NoResultException;
 class UserRepository extends EntityRepository {
 
     private $usernameColumn = 'usernameCanonical';
+    private $emailColumn = 'emailCanonical';
 
 //    public function findAll() {
 //        return parent::findAll();
@@ -22,10 +23,12 @@ class UserRepository extends EntityRepository {
 
     public function findByUsernameColumn($username, $joinRoles = false, $joinGroups = false) {
         $usernameColumn = $this->usernameColumn;
+        $emailColumn = $this->emailColumn;
         $queryBuilder = $this
                 ->createQueryBuilder('u')
 //                ->select('u, ur, ug, r, g')
                 ->where('u.' . $usernameColumn . ' = :username')
+//                ->orWhere('u.' . $emailColumn . ' = :username')
                 ->setParameter('username', $username);
         if ($joinRoles && $joinGroups) {
             $queryBuilder->select('u, ur, r, ug, g');

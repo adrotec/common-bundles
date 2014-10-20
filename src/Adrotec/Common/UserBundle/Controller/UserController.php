@@ -28,7 +28,6 @@ class UserController extends Controller {
             $em = $this->getDoctrine()->getManager();
             $repository = $em->getRepository('AdrotecCommonUserBundle:User');
             if ($user = $repository->findByUsernameColumn($username)) {
-                unset($response['error']);
                 $response['salt'] = $user->getSalt();
             }
             else {
@@ -38,6 +37,7 @@ class UserController extends Controller {
                 $response['salt'] = base_convert(sha1('P*65zp+'.$username.'k81sqq$$#'), 16, 36);
             }
         }
+        return new \Symfony\Component\HttpFoundation\JsonResponse($response);
 //        $responseText = json_encode($response);
         $responseText = $this->get('serializer')->serialize($response, 'json');
         $response = new Response($responseText);
@@ -45,7 +45,7 @@ class UserController extends Controller {
         return $response;
     }
 
-    public function accountAction(){
+    public function accountAction(Request $request){
 
         $response = array('error' => 'Failed');
 
@@ -58,9 +58,14 @@ class UserController extends Controller {
 
         if ($token->isAuthenticated() && $user instanceof UserInterface) {
             $existingPasswordEncrypted = $user->getPassword();
-            $credentials = $_POST['credentials'];
-            $hash = $_POST['hash'];
-            if($hash == hash('sha256', $credentials.'{'.$existingPasswordEncrypted.'}')){
+            $credentials = $request->request->get('credentials');
+            $hash = $request->request->get('hash');
+//            $response
+            $response['password'] = $existingPasswordEncrypted;
+            $existingHash = hash('sha256', $credentials.'{'.$existingPasswordEncrypted.'}');
+            $response['existingHash'] = $existingHash;
+            $response['req'] = $request->request->all();
+            if($hash == $existingHash){
                 unset($response['error']);
                 $response['success'] = true;
                 $user->setCredentials($credentials);
