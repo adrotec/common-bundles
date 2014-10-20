@@ -8,7 +8,7 @@ class AdrotecCommonFSBundle extends AdrotecCommonCoreBundle {
     static protected function getEntityClasses() {
         return array(
             'File',
-//            'FileContent',
+            'FileContent',
         );
     }
 }

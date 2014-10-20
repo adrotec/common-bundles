@@ -45,6 +45,25 @@ abstract class AbstractFile {
     protected $modifiedAt;
 
     /**
+     * @var \Adrotec\Common\FSBundle\Entity\FileContent
+     */
+    protected $fileContent;
+
+    /**
+     * @var integer
+     */
+    protected $id;
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId() {
+        return $this->id;
+    }
+    
+    /**
      * Set name
      *
      * @param string $name
@@ -93,7 +112,7 @@ abstract class AbstractFile {
      * @return File
      */
     public function setContent($content) {
-        /*
+        //*
         $tmpfname = tempnam(sys_get_temp_dir(), 'uf_');
 
         $handle = fopen($tmpfname, "w");
@@ -104,9 +123,17 @@ abstract class AbstractFile {
         $file = new UploadedFile($tmpfname, $this->name, $this->mimeType, null, null, true);
 
         $this->setFile($file);
+                
+        return $this;
 
 //                unlink($tmpfname);
 //*/
+        $fileContent = $this->getFileContent();
+        if(!$fileContent){
+            $fileContent = new FileContent();
+        }
+        $fileContent->setContentBinary($content);
+//        $this->setFileContent($fileContent);
         $this->content = $content;
         return $this;
     }
@@ -119,6 +146,11 @@ abstract class AbstractFile {
     public function getContent() {
         if($this->content){
             return stream_get_contents($this->content);
+        }
+        return $this->content = @file_get_contents(realpath($this->getAbsolutePath()));
+        $fileContent = $this->getFileContent();
+        if($fileContent){
+            return $fileContent->getContentBinary();
         }
         /*
         if ($this->content) {
@@ -262,7 +294,8 @@ abstract class AbstractFile {
     }
 
     public function getAbsolutePath() {
-        return null === $this->extension ? null : $this->getUploadRootDir() . '/' . $this->getId() . '.' . $this->extension;
+//        return $this->getUploadRootDir();
+        return false && null === $this->extension ? null : $this->getUploadRootDir() . '/' . $this->getId() . '.' . $this->extension;
     }
 
 //    public function getWebPath() {
@@ -272,7 +305,9 @@ abstract class AbstractFile {
     protected function getUploadRootDir() {
         // the absolute diretory path where uploaded documents should be saved
 //        return __DIR__ . '/../../../../web/' . $this->getUploadDir();
-        return __DIR__ . '/../../../../../data/' . $this->getUploadDir();
+        return // __DIR__ . '/../../../../../data/'
+                '/home/mrsafraz/adrotec/Magnet/server/data/'
+                . $this->getUploadDir();
     }
 
     protected function getUploadDir() {
@@ -295,7 +330,7 @@ abstract class AbstractFile {
             } catch (\Exception $e) {
 //                throw $e;
                 $this->extension = str_replace('image/', '', $this->mimeType);
-            }
+            };
         }
     }
 
@@ -367,17 +402,25 @@ abstract class AbstractFile {
     }
 
     /**
-     * @var integer
-     */
-    protected $id;
-
-    /**
-     * Get id
+     * Set fileContent
      *
-     * @return integer 
+     * @param \Adrotec\Common\FSBundle\Entity\FileContent $fileContent
+     * @return AbstractFile
      */
-    public function getId() {
-        return $this->id;
+    public function setFileContent(\Adrotec\Common\FSBundle\Entity\FileContent $fileContent = null)
+    {
+        $this->fileContent = $fileContent;
+
+        return $this;
     }
 
+    /**
+     * Get fileContent
+     *
+     * @return \Adrotec\Common\FSBundle\Entity\FileContent 
+     */
+    public function getFileContent()
+    {
+        return $this->fileContent;
+    }
 }

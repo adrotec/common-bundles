@@ -4,7 +4,7 @@ namespace Adrotec\Common\FSBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
-/**
+    /**
  * FileContent
  */
 class FileContent
@@ -68,8 +68,8 @@ class FileContent
      */
     public function getContentBase64()
     {
-        if($this->contentBinary){
-            return base64_encode($this->contentBase64);
+        if(is_resource($this->contentBinary)){
+            return base64_encode(stream_get_contents($this->contentBinary));
         }
         return $this->contentBase64;
     }

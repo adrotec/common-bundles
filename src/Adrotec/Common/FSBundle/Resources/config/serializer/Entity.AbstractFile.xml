@@ -9,6 +9,6 @@
         <property name="createdAt" expose="true"></property>
         <property name="mimeType" expose="true"></property>
         <property name="modifiedAt" expose="true"></property>
-        <!--<property name="fileContent" expose="true"></property>-->
+        <property name="fileContent" expose="true"></property>
     </class>
 </serializer>

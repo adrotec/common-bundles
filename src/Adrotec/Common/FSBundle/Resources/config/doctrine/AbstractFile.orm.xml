@@ -6,17 +6,17 @@
 
         <field name="name" type="string" column="name" nullable="true"/>
         <field name="extension" type="string" column="extension" length="10" nullable="true"/>
-        <field name="content" type="blob" column="content" nullable="true"/>
-        <field name="contentBase64" type="text" column="content_base64" nullable="true"/>
+        <!--        <field name="content" type="blob" column="content" nullable="true"/>
+        <field name="contentBase64" type="text" column="content_base64" nullable="true"/>-->
         <field name="createdAt" type="datetime" column="created_at" nullable="true"/>
         <field name="mimeType" type="string" column="mime_type" nullable="true"/>
         <field name="modifiedAt" type="datetime" column="modified_at" nullable="true"/>
 
         <!-- ASSOCIATIONS -->
 
-<!--        <one-to-one field="fileContent" target-entity="Adrotec\Common\FSBundle\Entity\FileContent">
+        <one-to-one field="fileContent" target-entity="Adrotec\Common\FSBundle\Entity\FileContent">
             <join-column name="file_content_id" referenced-column-name="id" />
-        </one-to-one>-->
+        </one-to-one>
 
         <!-- LIFECYCLE CALLBACKS -->
         <lifecycle-callbacks>
