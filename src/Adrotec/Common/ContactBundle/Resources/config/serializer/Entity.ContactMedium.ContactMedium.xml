@@ -5,7 +5,7 @@
         <xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
         <property name="id" expose="true"></property>
         <property name="value" expose="true"></property>
-        <property name="contact" expose="true"></property>
+        <!--<property name="contact" expose="true"></property>-->
         <!--<property name="contactId" expose="true"></property>-->
     </class>
 </serializer>

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
     <entity name="Adrotec\Common\ContactBundle\Entity\ContactMedium\SocialProfile">
+        <many-to-one field="contact" target-entity="Adrotec\Common\ContactBundle\Entity\Contact" inversed-by="socialProfiles">
+            <join-column name="contact_id" />
+        </many-to-one>
 
         <many-to-one field="socialProfileType" target-entity="Adrotec\Common\ContactBundle\Entity\ContactType\SocialProfileType">
             <join-column name="contact_type_id" />

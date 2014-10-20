@@ -2,8 +2,6 @@
 
 namespace Adrotec\Common\ContactBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
 /**
  * Address
  */
@@ -43,12 +41,6 @@ class Address {
      * @var integer
      */
     private $id;
-
-    /**
-     * @var \Adrotec\Common\ContactBundle\Entity\Lookup\District
-     */
-    private $district;
-
 
     /**
      * Set line1
@@ -198,26 +190,4 @@ class Address {
         return $this->id;
     }
 
-    /**
-     * Set district
-     *
-     * @param \Adrotec\Common\ContactBundle\Entity\Lookup\District $district
-     * @return Address
-     */
-    public function setDistrict(\Adrotec\Common\ContactBundle\Entity\Lookup\District $district = null)
-    {
-        $this->district = $district;
-
-        return $this;
-    }
-
-    /**
-     * Get district
-     *
-     * @return \Adrotec\Common\ContactBundle\Entity\Lookup\District 
-     */
-    public function getDistrict()
-    {
-        return $this->district;
-    }
 }

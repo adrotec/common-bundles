@@ -12,8 +12,8 @@
         <field name="latitude" type="float" column="latitude" nullable="true"/>
         <field name="longitude" type="float" column="longitude" nullable="true"/>
 
-        <many-to-one field="district" target-entity="Adrotec\Common\ContactBundle\Entity\Lookup\District">
-            <join-column name="district_id" />
-        </many-to-one>
+        <!--<many-to-one field="district" target-entity="Adrotec\Common\ContactBundle\Entity\Lookup\District">-->
+            <!--<join-column name="district_id" />-->
+        <!--</many-to-one>-->
     </entity>
 </doctrine-mapping>

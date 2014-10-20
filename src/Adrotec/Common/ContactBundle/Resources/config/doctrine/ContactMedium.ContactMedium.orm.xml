@@ -17,9 +17,9 @@
 
         <!-- ASSOCIATIONS-->
     
-        <many-to-one field="contact" target-entity="Adrotec\Common\ContactBundle\Entity\Contact">
+<!--        <many-to-one field="contactBase" target-entity="Adrotec\Common\ContactBundle\Entity\Contact" inversed-by="contactMedia">
             <join-column name="contact_id" />
-        </many-to-one>
+        </many-to-one>-->
 
 <!--        <many-to-one field="contactType" target-entity="Adrotec\Common\ContactBundle\Entity\ContactType\ContactType">
             <join-column name="contact_type_id" />

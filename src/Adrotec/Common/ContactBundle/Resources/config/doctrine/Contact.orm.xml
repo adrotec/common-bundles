@@ -4,15 +4,15 @@
     <id name="id" type="integer" column="id">
       <generator strategy="AUTO"/>
     </id>
-    
+
     <!-- ASSOCIATIONS -->
-    
-            
+
+
         <one-to-many field="contactAddresses" target-entity="Adrotec\Common\ContactBundle\Entity\ContactAddress" mapped-by="contact">
         </one-to-many>
-            
-        <one-to-many field="contactMedia" target-entity="Adrotec\Common\ContactBundle\Entity\ContactMedium\ContactMedium" mapped-by="contact">
-        </one-to-many>
+
+<!--        <one-to-many field="contactMedia" target-entity="Adrotec\Common\ContactBundle\Entity\ContactMedium\ContactMedium" mapped-by="contactBase">
+        </one-to-many>-->
             
         <one-to-many field="phones" target-entity="Adrotec\Common\ContactBundle\Entity\ContactMedium\Phone" mapped-by="contact">
         </one-to-many>

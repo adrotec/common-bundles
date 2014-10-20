@@ -7,7 +7,7 @@
     
         <!-- ASSOCIATIONS -->
     
-        <many-to-one field="contact" target-entity="Adrotec\Common\ContactBundle\Entity\Contact">
+        <many-to-one field="contact" target-entity="Adrotec\Common\ContactBundle\Entity\Contact" inversed-by="contactAddresses">
             <join-column name="contact_id" />
         </many-to-one>
     
