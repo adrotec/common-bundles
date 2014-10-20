@@ -30,7 +30,6 @@ class WsseProvider implements AuthenticationProviderInterface {
             $user = $this->userProvider->loadUserByUsername($token->getUsername());
         } catch (\Exception $e) {
             $user = false;
-            echo $e->getMessage();
         }
 
         if ($user) {
