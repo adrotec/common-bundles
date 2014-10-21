@@ -14,6 +14,7 @@ class Email extends ContactMedium {
      */
     private $emailType;
 
+    protected $contact;
 
     /**
      * Set emailType

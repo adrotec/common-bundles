@@ -12,6 +12,8 @@ class Phone extends ContactMedium {
      * @var \Adrotec\Common\ContactBundle\Entity\ContactType\PhoneType
      */
     private $phoneType;
+    
+    protected $contact;
 
 
     /**

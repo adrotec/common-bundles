@@ -13,6 +13,7 @@ class Url extends ContactMedium {
      */
     private $urlType;
 
+    protected $contact;
 
     /**
      * Set urlType

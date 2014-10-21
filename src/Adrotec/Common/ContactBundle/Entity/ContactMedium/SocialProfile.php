@@ -13,6 +13,7 @@ class SocialProfile extends ContactMedium {
      */
     private $socialProfileType;
 
+    protected $contact;
 
     /**
      * Set socialProfileType

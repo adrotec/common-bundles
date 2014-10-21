@@ -22,11 +22,6 @@ class Contact
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
-    private $contactMedia;
-
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
     private $phones;
 
     /**
@@ -55,7 +50,6 @@ class Contact
     public function __construct()
     {
         $this->contactAddresses = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->contactMedia = new \Doctrine\Common\Collections\ArrayCollection();
         $this->phones = new \Doctrine\Common\Collections\ArrayCollection();
         $this->emails = new \Doctrine\Common\Collections\ArrayCollection();
         $this->socialProfiles = new \Doctrine\Common\Collections\ArrayCollection();
@@ -104,39 +98,6 @@ class Contact
     public function getContactAddresses()
     {
         return $this->contactAddresses;
-    }
-
-    /**
-     * Add contactMedia
-     *
-     * @param \Adrotec\Common\ContactBundle\Entity\ContactMedium\ContactMedium $contactMedia
-     * @return Contact
-     */
-    public function addContactMedia(\Adrotec\Common\ContactBundle\Entity\ContactMedium\ContactMedium $contactMedia)
-    {
-        $this->contactMedia[] = $contactMedia;
-
-        return $this;
-    }
-
-    /**
-     * Remove contactMedia
-     *
-     * @param \Adrotec\Common\ContactBundle\Entity\ContactMedium\ContactMedium $contactMedia
-     */
-    public function removeContactMedia(\Adrotec\Common\ContactBundle\Entity\ContactMedium\ContactMedium $contactMedia)
-    {
-        $this->contactMedia->removeElement($contactMedia);
-    }
-
-    /**
-     * Get contactMedia
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getContactMedia()
-    {
-        return $this->contactMedia;
     }
 
     /**

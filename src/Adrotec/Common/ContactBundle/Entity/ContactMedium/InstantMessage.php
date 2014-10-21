@@ -13,6 +13,7 @@ class InstantMessage extends ContactMedium {
      */
     private $instanMessageType;
 
+    protected $contact;
 
     /**
      * Set instanMessageType
