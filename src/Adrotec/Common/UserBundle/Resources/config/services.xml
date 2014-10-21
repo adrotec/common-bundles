@@ -9,4 +9,9 @@
         <parameter key="adro_common_user.user_class">Adrotec\Common\UserBundle\Entity\User</parameter>
         <parameter key="fos_group_class">Adrotec\Common\UserBundle\Entity\Group</parameter>
     </parameters>
+    <services>
+        <service id="adrotec_common_user.user_events" class="Adrotec\Common\UserBundle\EventSubscriber\UserEvents">
+            <tag name="doctrine.event_subscriber" connection="default" />
+        </service>
+    </services>
 </container>

@@ -5,6 +5,14 @@
       <generator strategy="AUTO"/>
     </id>
 
+    <field name="firstName" type="string" column="first_name" nullable="true"/>
+    <field name="lastName" type="string" column="last_name" nullable="true" />
+    <field name="name" type="string" column="name" nullable="true" />
+
+    <many-to-one field="picture" target-entity="Adrotec\Common\FSBundle\Entity\File">
+        <join-column name="picture_id"></join-column>
+    </many-to-one>
+
     <one-to-many field="userGroups" target-entity="UserGroup" mapped-by="user">
 
     </one-to-many>
