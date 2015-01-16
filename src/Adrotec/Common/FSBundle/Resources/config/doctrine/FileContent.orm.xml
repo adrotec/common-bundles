@@ -6,5 +6,8 @@
         </id>
         <field name="contentBinary" type="blob" column="content_binary" nullable="true"/>
         <field name="contentBase64" type="text" column="content_base64" nullable="true"/>
+<!--        <one-to-one field="file" target-entity="File">
+            <join-column name="file_id" referenced-column-name="id" />
+        </one-to-one>-->
     </entity>
 </doctrine-mapping>

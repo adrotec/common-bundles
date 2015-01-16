@@ -5,9 +5,18 @@ namespace Adrotec\Common\UserBundle\EventSubscriber;
 use Doctrine\Common\EventSubscriber;
 use Doctrine\ORM\Event\LifecycleEventArgs;
 use Adrotec\Common\UserBundle\Entity\User;
+use Adrotec\Common\UserBundle\CurrentUserAwareInterface;
+use Adrotec\Common\UserBundle\Service\CurrentUserProvider;
 
-class UserEvents implements EventSubscriber
+class CurrentUserEvents implements EventSubscriber
 {
+    
+    private $currentUserProvider;
+    
+    public function __construct(CurrentUserProvider $currentUserProvider)
+    {
+        $this->currentUserProvider = $currentUserProvider;
+    }
 
     public function getSubscribedEvents()
     {
@@ -20,9 +29,8 @@ class UserEvents implements EventSubscriber
     protected function preSave(LifecycleEventArgs $args)
     {
         $entity = $args->getEntity();
-        if ($entity instanceof User) {
-            $name = trim($entity->getFirstName() . ' ' . $entity->getLastName());
-            $entity->setName($name);
+        if(method_exists($entity, 'setUser')){
+            $entity->setUser($this->currentUserProvider->getUser());
         }
     }
 

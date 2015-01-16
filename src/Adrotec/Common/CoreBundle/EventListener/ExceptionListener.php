@@ -11,7 +11,16 @@ use Symfony\Component\Security\Core\Exception\InsufficientAuthenticationExceptio
 
 use Symfony\Component\HttpKernel\KernelInterface;
 
+use Symfony\Component\DependencyInjection\ContainerInterface;
+
 class ExceptionListener {
+    
+    private $container;
+    
+    public function __construct(ContainerInterface $container)
+    {
+        $this->container = $container;
+    }
 
     private function getHttpErrorMessage($code = 500) {
         $code = intval($code);
@@ -31,6 +40,14 @@ class ExceptionListener {
     }
 
     public function onKernelException(GetResponseForExceptionEvent $event) {
+        
+        $debug = $this->container->getParameter('kernel.debug');
+        $request = $event->getRequest();
+        $jsonOnly = in_array('application/json', $request->getAcceptableContentTypes());
+        if($debug && !$jsonOnly){
+            return;
+        }
+        
         // You get the exception object from the received event
         $exception = $event->getException();
 

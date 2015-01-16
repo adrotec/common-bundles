@@ -6,6 +6,7 @@
         <property name="firstName" expose="true"></property>
         <property name="lastName" expose="true"></property>
         <property name="name" expose="true"></property>
+        <property name="contact" expose="true"></property>
         <property name="picture" expose="true"></property>
         <property name="userGroups" expose="true"></property>
         <property name="userRoles" expose="true"></property>

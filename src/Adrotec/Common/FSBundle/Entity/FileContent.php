@@ -71,6 +71,15 @@ class FileContent
         if(is_resource($this->contentBinary)){
             return base64_encode(stream_get_contents($this->contentBinary));
         }
+        
+        $fileManager = new \Adrotec\Common\FSBundle\EventSubscriber\FileManager();
+        $fileManager->setUploadDir('/media/adrotec/Magnet/server/data/uploads');
+        if($this->getFile()){
+            $content = $fileManager->getContent($this->getFile());
+            if($content){
+                return base64_encode($content);
+            }
+        }
         return $this->contentBase64;
     }
 
@@ -82,5 +91,33 @@ class FileContent
     public function getId()
     {
         return $this->id;
+    }
+    /**
+     * @var \Adrotec\Common\FSBundle\Entity\File
+     */
+    private $file;
+
+
+    /**
+     * Set file
+     *
+     * @param \Adrotec\Common\FSBundle\Entity\File $file
+     * @return FileContent
+     */
+    public function setFile(\Adrotec\Common\FSBundle\Entity\File $file = null)
+    {
+        $this->file = $file;
+
+        return $this;
+    }
+
+    /**
+     * Get file
+     *
+     * @return \Adrotec\Common\FSBundle\Entity\File 
+     */
+    public function getFile()
+    {
+        return $this->file;
     }
 }

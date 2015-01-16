@@ -13,6 +13,10 @@
         <join-column name="picture_id"></join-column>
     </many-to-one>
 
+    <many-to-one field="contact" target-entity="Adrotec\Common\ContactBundle\Entity\Contact">
+        <join-column name="contact_id"></join-column>
+    </many-to-one>
+
     <one-to-many field="userGroups" target-entity="UserGroup" mapped-by="user">
 
     </one-to-many>

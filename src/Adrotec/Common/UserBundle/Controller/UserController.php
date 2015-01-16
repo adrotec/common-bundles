@@ -137,6 +137,9 @@ class UserController extends Controller {
         }
         else {
             $response['error'] = 'Invalid User';
+            $response['user'] = $user;
+            $response['aurH'] = $token->isAuthenticated();
+            $response['tok'] = $token;
         }
         $responseText = json_encode($response);
 //        $responseText = $this->get('serializer')->serialize($response, 'json');

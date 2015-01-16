@@ -64,7 +64,7 @@ class WsseListener implements ListenerInterface {
         }
 
         // By default deny authorization
-        $response = new Response();
+        $response = new Response('Access Denied');
         $response->setStatusCode(403);
         $event->setResponse($response);
     }

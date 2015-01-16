@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+<!--    <parameters>
+    </parameters>-->
+    <services>
+        <service id="adrotec_fs.file_manager" class="Adrotec\Common\FSBundle\EventSubscriber\FileManager">
+            <argument type="service" id="kernel"></argument>
+        </service>
+        <service id="adrotec_common_fs.file_events" class="Adrotec\Common\FSBundle\EventSubscriber\FileEvents">
+            <argument type="service" id="adrotec_fs.file_manager"></argument>
+            <tag name="doctrine.event_subscriber" connection="default" />
+        </service>
+    </services>
+</container>

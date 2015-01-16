@@ -17,6 +17,17 @@
         <one-to-one field="fileContent" target-entity="Adrotec\Common\FSBundle\Entity\FileContent">
             <join-column name="file_content_id" referenced-column-name="id" />
         </one-to-one>
+
+        <!-- LIFECYCLE CALLBACKS -->
+        <lifecycle-callbacks>
+            <lifecycle-callback type="prePersist" method="prePersist"/>
+            <lifecycle-callback type="preUpdate" method="preUpdate"/>
+            <lifecycle-callback type="postPersist" method="postPersist"/>
+            <lifecycle-callback type="postUpdate" method="postUpdate"/>
+            <lifecycle-callback type="preRemove" method="preRemove"/>
+            <lifecycle-callback type="postRemove" method="postRemove"/>
+            <lifecycle-callback type="postLoad" method="postLoad"/>
+        </lifecycle-callbacks>
         
     </mapped-superclass>
 </doctrine-mapping>

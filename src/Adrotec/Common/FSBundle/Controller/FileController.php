@@ -19,6 +19,10 @@ class FileController extends Controller {
     protected function fileContentNotAvailable($fileEntity) {
         
     }
+    
+    protected function getFileEntityClass(){
+        return 'AdrotecCommonFSBundle:File';
+    }
 
     protected function getErrorImage($message) {
         $message = explode(' ', $message);
@@ -44,7 +48,7 @@ class FileController extends Controller {
 
     protected function getFileResponse($fileId) {
         $em = $this->getDoctrine()->getManager();
-        $fileEntity = $em->find('AdrotecCommonFSBundle:File', $fileId);
+        $fileEntity = $em->find($this->getFileEntityClass(), $fileId);
 //        $fileEntity = $em->find('AdroInstituteBundle:Photo', $fileId);
         if ($fileEntity) {
 //            $response->headers->set('Cache-Control', 'private');
@@ -52,7 +56,10 @@ class FileController extends Controller {
 //        $response->setContent($this->get('serializer')->serialize($fileEntity, 'json'));
 //            print_r($fileEntity->getFileType()->getCode());
 
-            $content = $fileEntity->getContent();
+//            $content = $fileEntity->getContent();
+//            $fileManager = new \Adrotec\Common\FSBundle\EventSubscriber\FileManager();
+            $fileManager = $this->container->get('adrotec_fs.file_manager');
+            $content = $fileManager->getContent($fileEntity);
             if ($content) {
                 $response = new Response();
                 $response->headers->set('Content-Type', $fileEntity->getMimeType());

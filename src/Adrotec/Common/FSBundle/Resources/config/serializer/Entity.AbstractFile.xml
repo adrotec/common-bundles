@@ -6,6 +6,7 @@
         <property name="name" expose="true"></property>
         <property name="extension" expose="true"></property>
         <property name="contentBase64" expose="true" access-type="public_method"></property>
+        <!--<property name="contentBase64" expose="true"></property>-->
         <property name="createdAt" expose="true"></property>
         <property name="mimeType" expose="true"></property>
         <property name="modifiedAt" expose="true"></property>
