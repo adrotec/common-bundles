@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * ContactMedium
  */
-class ContactMedium {
+abstract class ContactMedium {
     /**
      * @var string
      */
