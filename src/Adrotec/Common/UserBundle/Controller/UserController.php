@@ -22,6 +22,7 @@ class UserController extends Controller {
     public function loginAction(Request $request) {
         // $response = array('error' => 'Invalid Username or password');
         $response = array();
+        $invalidUser = false; $noUser = false;
         $username = $request->getMethod() == 'POST' ? $request->request->get('username') : false;
 //        $username = $request->query->get('username'); // for testing only
         if ($username) {
@@ -31,11 +32,17 @@ class UserController extends Controller {
                 $response['salt'] = $user->getSalt();
             }
             else {
-                // always return a salt for security reasons!
-                // salt in FOSUserBundle style!
-                // make sure same salt is returned for a particular username
-                $response['salt'] = base_convert(sha1('P*65zp+'.$username.'k81sqq$$#'), 16, 36);
+                $invalidUser = true;
             }
+        }
+        else {
+            $noUser = true;
+        }
+        if($invalidUser || $noUser) {
+            // always return a salt for security reasons!
+            // salt in FOSUserBundle style!
+            // make sure same salt is returned for a particular username
+            $response['salt'] = base_convert(sha1('P*65zp+'.$username.'k81sqq$$#'), 16, 36);
         }
         return new \Symfony\Component\HttpFoundation\JsonResponse($response);
 //        $responseText = json_encode($response);
